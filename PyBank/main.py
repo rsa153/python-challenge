@@ -5,6 +5,16 @@ import csv
 # Set path for file
 budget_data = os.path.join("Resources", "budget_data.csv")
 
+# Lists to store data
+total_months = 0
+revenue = 0
+monthly_change = []
+month_count = []
+greatest_increase = 0
+greatest_increase_month = 0
+greatest_decrease = 0
+greatest_decrease_month = 0
+
 # Open and read csv
 with open(budget_data, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
