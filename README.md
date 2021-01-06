@@ -1,15 +1,16 @@
 # python-challenge
 ## PyBank
-* A Python script for analyzing the financial records with a dataset (in budget_data.csv) that is composed of two columns: Date and Profit/Losses. 
-* The Python script analyzes the records and calculates the following:
+* A Python script for analyzing the financial records with a dataset (PyBank/Resources/budget_data.csv) that is composed of two columns: Date and Profit/Losses. 
+* The Python script calculates the following:
   * The total number of months included in the dataset.
   * The net total amount of "Profit/Losses" over the entire period.
   * The average of the changes in "Profit/Losses" over the entire period.
   * The greatest increase in profits (date and amount) over the entire period.
   * The greatest decrease in losses (date and amount) over the entire period.
-* The final script prints the analysis to the terminal and exports the results to a text file called 'pybank.txt'.
+* The final script prints the analysis to the terminal and exports the results to a text file (PyBank/analysis/pybank.txt).
 * The final results are printed as the following:
-    ```Financial Analysis
+    ```
+    Financial Analysis
     ----------------------------
     Total Months: 86
     Total: $38382578
@@ -20,3 +21,25 @@
 
 
 ## PyPoll
+* A Python script for analyzing the votes in a small, rural town modernize its vote counting process. The polling data set (PyPoll/Resources/election_data.csv) is composed of three columns: Voter ID, County, and Candidate. 
+* The Python script calculates the following:
+  * The total number of votes cast.
+  * A complete list of candidates who received votes.
+  * The percentage of votes each candidate won.
+  * The total number of votes each candidate won.
+  * The winner of the election based on popular vote.
+* The final script prints the analysis to the terminal and exports the results to a text file (PyPoll/analysis/election_results.txt).
+* The final results are printed as the following:
+    ```
+    Election Results
+    -------------------------
+    Total Votes: 3521001
+    -------------------------
+    Khan: 63.000% (2218231)
+    Correy: 20.000% (704200)
+    Li: 14.000% (492940)
+    O'Tooley: 3.000% (105630)
+    -------------------------
+    Winner: Khan
+    -------------------------
+    ```
