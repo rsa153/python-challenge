@@ -3,7 +3,7 @@ import os
 import csv
 
 # Set path for file
-budget_data = os.path.join("Resources", "election_data.csv")
+election_data = os.path.join("Resources", "election_data.csv")
 
 # Set variables
 total_votes = 0
@@ -13,7 +13,7 @@ li_votes = 0
 otooley_votes = 0
 
 # Open and read csv
-with open(budget_data, newline='') as csvfile:
+with open(election_data, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     
     # Read the header row 
@@ -44,7 +44,7 @@ with open(budget_data, newline='') as csvfile:
     # Determine winner of election
     winner = max(khan_votes, correy_votes, li_votes, otooley_votes)
 
-# Display winner of vote
+    # Display winner of vote
     if winner == khan_votes:
         winner_name = "Khan"
     elif winner == correy_votes:
@@ -54,16 +54,18 @@ with open(budget_data, newline='') as csvfile:
     else:
         winner_name = "O'Tooley" 
         
-print(f"Kahn percent: {kahn_percent:.2f}")
-print(f"Kahn number of votes: {khan_votes}")
-print(f"C percent: {correy_percent:.2f}")
-print(f"C number of votes: {correy_votes}")
-print(f"L percent: {li_percent:.2f}")
-print(f"L number of votes: {li_votes}")
-print(f"O percent: {otooley_percent:.2f}")
-print(f"O number of votes: {otooley_votes}")
+# Print analysis in terminal
+print(f"Election Results")
+print(f"---------------------------")
 print(f"Total Votes: {total_votes}")
+print(f"---------------------------")
+print(f"Kahn: {kahn_percent:.3%} ({khan_votes})")
+print(f"Correy: {correy_percent:.3%} ({correy_votes})")
+print(f"Li: {li_percent:.3%} ({li_votes})")
+print(f"O'Tooley: {otooley_percent:.3%} ({otooley_votes})")
+print(f"---------------------------")
 print(f"Winner: {winner_name}")
+print(f"---------------------------")
 
 # Specify file to write to
 output_file = os.path.join('analysis', 'election_results.txt')
@@ -71,5 +73,15 @@ output_file = os.path.join('analysis', 'election_results.txt')
 # Open the txt file and specify the variable that holds the contents of the file
 with open(output_file, 'w',) as txtfile:
 
-# Write new data in txtfile
+    # Write new data in txtfile
     txtfile.write(f"Election Results\n")
+    txtfile.write(f"---------------------------\n")
+    txtfile.write(f"Total Votes: {total_votes}\n")
+    txtfile.write(f"---------------------------\n")
+    txtfile.write(f"Kahn: {kahn_percent:.3%}({khan_votes})\n")
+    txtfile.write(f"Correy: {correy_percent:.3%}({correy_votes})\n")
+    txtfile.write(f"Li: {li_percent:.3%}({li_votes})\n")
+    txtfile.write(f"O'Tooley: {otooley_percent:.3%}({otooley_votes})\n")
+    txtfile.write(f"---------------------------\n")
+    txtfile.write(f"Winner: {winner_name}\n")
+    txtfile.write(f"---------------------------\n")
