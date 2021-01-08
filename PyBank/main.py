@@ -73,3 +73,9 @@ with open(output_file, 'w',) as txtfile:
 
 # Write new data in txtfile
     txtfile.write(f"Financial Analysis\n")
+    txtfile.write(f"---------------------------\n")
+    txtfile.write(f"Total Months: {total_months}\n")
+    txtfile.write(f"Total: ${revenue}\n")
+    txtfile.write(f"Average Change: ${average_change}\n")
+    txtfile.write(f"Greatest Increase in Profits:, {greatest_increase_month}, (${high})\n")
+    txtfile.write(f"Greatest Decrease in Profits:, {greatest_decrease_month}, (${low})\n")
