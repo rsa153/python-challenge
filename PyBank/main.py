@@ -60,8 +60,8 @@ print(f"---------------------------")
 print(f"Total Months: {total_months}")
 print(f"Total: ${revenue}")
 print(f"Average Change: ${average_change:.2f}")
-print(f"Greatest Increase in Profits:, {greatest_increase_month}, (${high})")
-print(f"Greatest Decrease in Profits:, {greatest_decrease_month}, (${low})")
+print(f"Greatest Increase in Profits: {greatest_increase_month} (${high})")
+print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${low})")
 
 # Specify file to write to
 output_file = os.path.join('analysis', 'pybank.txt')
@@ -75,5 +75,5 @@ with open(output_file, 'w',) as txtfile:
     txtfile.write(f"Total Months: {total_months}\n")
     txtfile.write(f"Total: ${revenue}\n")
     txtfile.write(f"Average Change: ${average_change:.2f}\n")
-    txtfile.write(f"Greatest Increase in Profits:, {greatest_increase_month}, (${high})\n")
-    txtfile.write(f"Greatest Decrease in Profits:, {greatest_decrease_month}, (${low})\n")
+    txtfile.write(f"Greatest Increase in Profits: {greatest_increase_month} (${high})\n")
+    txtfile.write(f"Greatest Decrease in Profits: {greatest_decrease_month} (${low})\n")
