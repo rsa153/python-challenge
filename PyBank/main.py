@@ -55,7 +55,16 @@ with open(budget_data, newline='') as csvfile:
         average_change = sum(monthly_change)/ len(monthly_change)
         high = max(monthly_change)
         low = min(monthly_change)   
-            
+
+# Print analysis in terminal
+print(f"Financial Analysis")
+print(f"---------------------------")
+print(f"Total Months: {total_months}")
+print(f"Total: ${revenue}")
+print(f"Average Change: ${average_change:.2f}")
+print(f"Greatest Increase in Profits:, {greatest_increase_month}, (${high})")
+print(f"Greatest Decrease in Profits:, {greatest_decrease_month}, (${low})")
+
 # Specify file to write to
 output_file = os.path.join('analysis', 'pybank.txt')
 
