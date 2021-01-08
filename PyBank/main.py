@@ -19,7 +19,7 @@ greatest_decrease_month = 0
 with open(budget_data, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     
-    # Read the header row first (skip this step if there is no header)
+    # Read the header row
     csv_header = next(csvreader)
     row = next(csvreader)
 
