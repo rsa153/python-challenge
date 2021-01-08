@@ -23,6 +23,39 @@ with open(budget_data, newline='') as csvfile:
     csv_header = next(csvreader)
     row = next(csvreader)
 
+    #Set remaining variables
+    previous_profit = int(row[1])
+    total_months += 1
+    revenue += int(row[1])
+    greatest_increase = int(row[1])
+    greatest_increase_month = row[0]
+    
+    # Read each row of data after the header
+    for row in csvreader:
+        total_months += 1
+        revenue += int(row[1])
+        
+        # Calculate change from current to previous month
+        revenue_change = int(row[1]) - previous_profit
+        monthly_change.append(revenue_change)
+        previous_profit = int(row[1])
+        month_count.append(row[0])
+        
+        # Calculate the greatest increase in profits (date and amount)
+        if int(row[1]) > greatest_increase:
+            greatest_increase = int(row[1])
+            greatest_increase_month = row[0]
+        
+        # Calculate the greatest decrease in losses (date and amount)
+        if int(row[1]) < greatest_decrease:
+            greatest_decrease = int(row[1])
+            greatest_decrease_month = row[0]  
+            
+        # Calculate the average of changes in profits/losses and the date
+        average_change = sum(monthly_change)/ len(monthly_change)
+        high = max(monthly_change)
+        low = min(monthly_change)   
+            
 # Specify file to write to
 output_file = os.path.join('analysis', 'pybank.txt')
 
