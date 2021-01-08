@@ -23,7 +23,7 @@ with open(budget_data, newline='') as csvfile:
     csv_header = next(csvreader)
     row = next(csvreader)
 
-    # Calculate the total number of months and net profits/losses
+    # Set Variables
     total_months += 1
     previous_profit = int(row[1])
     revenue += int(row[1])
