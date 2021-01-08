@@ -30,10 +30,10 @@ with open(budget_data, newline='') as csvfile:
     
     # Read each row of data after the header
     for row in csvreader:
+       
+        # Calculate total months, net profits/losse, and changes from current to previous month
         total_months += 1
         revenue += int(row[1])
-        
-        # Calculate change from current to previous month
         revenue_change = int(row[1]) - previous_profit
         previous_profit = int(row[1])
         monthly_change.append(revenue_change)
