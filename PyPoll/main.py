@@ -18,9 +18,6 @@ with open(budget_data, newline='') as csvfile:
     
     # Read the header row 
     csv_header = next(csvfile)
-
-    # Set variables
-    total_votes += 1
     
     # Read each row of data after the header
     for row in csvreader:
@@ -44,6 +41,19 @@ with open(budget_data, newline='') as csvfile:
     li_percent = li_votes / total_votes
     otooley_percent = otooley_votes / total_votes
     
+    # Determine winner of election
+    winner = max(khan_votes, correy_votes, li_votes, otooley_votes)
+
+# Display winner of vote
+    if winner == khan_votes:
+        winner_name = "Khan"
+    elif winner == correy_votes:
+        winner_name = "Correy"
+    elif winner == li_votes:
+        winner_name = "Li"
+    else:
+        winner_name = "O'Tooley" 
+        
 print(f"Kahn percent: {kahn_percent:.2f}")
 print(f"Kahn number of votes: {khan_votes}")
 print(f"C percent: {correy_percent:.2f}")
@@ -53,6 +63,7 @@ print(f"L number of votes: {li_votes}")
 print(f"O percent: {otooley_percent:.2f}")
 print(f"O number of votes: {otooley_votes}")
 print(f"Total Votes: {total_votes}")
+print(f"Winner: {winner_name}")
 
 # Specify file to write to
 output_file = os.path.join('analysis', 'election_results.txt')
